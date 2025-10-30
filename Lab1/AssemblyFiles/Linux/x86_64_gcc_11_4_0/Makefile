@@ -2,22 +2,22 @@
 OUT_TARGET = lib1F5DF16EE1BF43B999A434ED38FE8F3A.a
 ifeq ($(DEBUG), 1)
 CONFIG_TARGET = StaticDebug
-CCFLAGS_TARGET = -Wall -O3 -g -DECO_LIB
+CCFLAGS_TARGET = -Wall -O0 -g -DECO_LIB
 LDFLAGS_TARGET =
 else
 CONFIG_TARGET = StaticRelease
-CCFLAGS_TARGET = -O3 -DECO_LIB
+CCFLAGS_TARGET = -O0 -DECO_LIB
 LDFLAGS_TARGET =
 endif
 else
 OUT_TARGET = 1F5DF16EE1BF43B999A434ED38FE8F3A.so
 ifeq ($(DEBUG), 1)
 CONFIG_TARGET = DynamicDebug
-CCFLAGS_TARGET = -Wall -O3 -fPIC -g -DECO_DLL
+CCFLAGS_TARGET = -Wall -O0 -fPIC -g -DECO_DLL
 LDFLAGS_TARGET = -shared
 else
 CONFIG_TARGET = DynamicRelease
-CCFLAGS_TARGET = -O3 -fPIC -DECO_DLL
+CCFLAGS_TARGET = -O0 -fPIC -DECO_DLL
 LDFLAGS_TARGET = -shared
 endif
 endif
@@ -31,6 +31,11 @@ SRC = \
 INCLUDES = \
 -I ../../../HeaderFiles \
 -I ../../../SharedFiles \
+-I ../../../../Lessons/Lesson02/Eco.CalculatorA/SharedFiles \
+-I ../../../../Lessons/Lesson03/Eco.CalculatorB/SharedFiles \
+-I ../../../../Lessons/Lesson06/Eco.CalculatorD/SharedFiles \
+-I ../../../../Lessons/Lesson07/Eco.CalculatorE/SharedFiles \
+-I ../../../../LabSharedFiles \
 -I $(ECO_FRAMEWORK)/Eco.Core1/SharedFiles \
 -I $(ECO_FRAMEWORK)/Eco.InterfaceBus1/SharedFiles \
 -I $(ECO_FRAMEWORK)/Eco.MemoryManager1/SharedFiles

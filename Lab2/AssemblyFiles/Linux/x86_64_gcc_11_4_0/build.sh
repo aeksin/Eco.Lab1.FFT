@@ -11,7 +11,7 @@ make -f Makefile
 export TARGET=1
 export DEBUG=0
 make -f Makefile
-export TARGET=1
+export TARGET=0
 export DEBUG=1
-make -f Makefile
-make -f MakefileExe
+make -f Makefile || exit 1
+make -f MakefileExe || exit 1
