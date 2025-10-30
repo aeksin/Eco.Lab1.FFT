@@ -17,20 +17,26 @@
  *
  */
 
-#ifndef __C_ECOLAB1_H__
-#define __C_ECOLAB1_H__
+#ifndef __C_ECOLAB2_H__
+#define __C_ECOLAB2_H__
 
-#include "IEcoLab1.h"
+#include "IEcoLab2.h"
 #include "IEcoSystem1.h"
 #include "IdEcoMemoryManager1.h"
 
+#include "IEcoCalculatorX.h"
+#include "IEcoCalculatorY.h"
 
-typedef struct CEcoLab1 {
+typedef struct CEcoLab2 {
 
-    /* Таблица функций интерфейса IEcoLab1 */
-    IEcoLab1VTbl* m_pVTblIEcoLab1;
-    IEcoVectorVTbl* m_pVTblIEcoVector;
+    /* Таблица функций интерфейса IEcoLab2 */
+    IEcoLab2VTbl* m_pVTblIEcoLab2;
 
+    /* Таблица функций интерфейса IEcoCalculatorY */
+    IEcoCalculatorYVTbl* m_pVTblY;
+
+    /* Таблица функций интерфейса IEcoCalculatorX */
+    IEcoCalculatorXVTbl* m_pVTblX;
 
     /* Счетчик ссылок */
     uint32_t m_cRef;
@@ -41,13 +47,20 @@ typedef struct CEcoLab1 {
     /* Системный интерфейс */
     IEcoSystem1* m_pISys;
 
-} CEcoLab1, *CEcoLab1Ptr;
+    IEcoCalculatorY* m_pIY;
+
+    IEcoCalculatorX* m_pIX;
+
+    IEcoUnknown* m_pInnerUnknown;
+
+} CEcoLab2, *CEcoLab2Ptr;
+
 
 /* Инициализация экземпляра */
-int16_t ECOCALLMETHOD initCEcoLab1(/*in*/ struct IEcoLab1* me, /* in */ IEcoUnknown *pIUnkSystem);
+int16_t ECOCALLMETHOD initCEcoLab2(/*in*/ struct IEcoLab2* me, /* in */ IEcoUnknown *pIUnkSystem);
 /* Создание экземпляра */
-int16_t ECOCALLMETHOD createCEcoLab1(/* in */ IEcoUnknown* pIUnkSystem, /* in */ IEcoUnknown* pIUnkOuter, /* out */ IEcoLab1** ppIEcoLab1);
+int16_t ECOCALLMETHOD createCEcoLab2(/* in */ IEcoUnknown* pIUnkSystem, /* in */ IEcoUnknown* pIUnkOuter, /* out */ IEcoLab2** ppIEcoLab2);
 /* Удаление */
-void ECOCALLMETHOD deleteCEcoLab1(/* in */ IEcoLab1* pIEcoLab1);
+void ECOCALLMETHOD deleteCEcoLab2(/* in */ IEcoLab2* pIEcoLab2);
 
 #endif /* __C_ECOLAB1_H__ */

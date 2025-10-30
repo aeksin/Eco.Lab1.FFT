@@ -17,8 +17,8 @@
  *
  */
 
-#ifndef __C_ECOLAB1_FACTORY_H__
-#define __C_ECOLAB1_FACTORY_H__
+#ifndef __C_ECOLAB2_FACTORY_H__
+#define __C_ECOLAB2_FACTORY_H__
 
 #include "IEcoSystem1.h"
 
@@ -37,6 +37,6 @@ typedef struct CEcoLab1Factory {
     char_t m_Version[16];
     char_t m_Manufacturer[64];
 
-} CEcoLab1Factory;
+} CEcoLab2Factory;
 
 #endif /* __C_ECOLAB1_FACTORY_H__ */

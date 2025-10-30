@@ -1,36 +1,50 @@
 ﻿ifeq ($(TARGET), 1)
-OUT_TARGET = EcoLab1
+OUT_TARGET = EcoLab2
 ifeq ($(DEBUG), 1)
 CONFIG_TARGET = StaticDebug
-CCFLAGS_TARGET = -Wall -O3 -g -DECO_LIB
+CCFLAGS_TARGET = -Wall -O0 -g -DECO_LIB
 LDFLAGS_TARGET =
 else
 CONFIG_TARGET = StaticRelease
-CCFLAGS_TARGET = -O3 -DECO_LIB
+CCFLAGS_TARGET = -O0 -DECO_LIB
 LDFLAGS_TARGET =
 endif
 else
-OUT_TARGET = EcoLab1
+OUT_TARGET = EcoLab2
 ifeq ($(DEBUG), 1)
 CONFIG_TARGET = DynamicDebug
-CCFLAGS_TARGET = -Wall -O3 -g -DECO_DLL
+CCFLAGS_TARGET = -Wall -O0 -g -DECO_DLL
 LDFLAGS_TARGET = 
 else
 CONFIG_TARGET = DynamicRelease
-CCFLAGS_TARGET = -O3 -DECO_DLL
+CCFLAGS_TARGET = -O0 -DECO_DLL
 LDFLAGS_TARGET = 
 endif
 endif
 
 # source files.
 SRC = \
-../../../UnitTestFiles/SourceFiles/EcoLab1.c
+../../../UnitTestFiles/SourceFiles/EcoLab2.c
 
 
 # include directories
 INCLUDES = \
 -I ../../../HeaderFiles \
 -I ../../../SharedFiles \
+-I ../../../../Lab1/SharedFiles \
+-I ../../../../Lessons/Lesson02/Eco.CalculatorA/SharedFiles \
+-I ../../../../Lessons/Lesson03/Eco.CalculatorB/SharedFiles \
+-I ../../../../Lessons/Lesson06/Eco.CalculatorD/SharedFiles \
+-I ../../../../Lessons/Lesson07/Eco.CalculatorE/SharedFiles \
+-I ../../../../Lessons/Lesson02/Eco.CalculatorA/SourceFiles \
+-I ../../../../Lessons/Lesson03/Eco.CalculatorB/SourceFiles \
+-I ../../../../Lessons/Lesson06/Eco.CalculatorD/SourceFiles \
+-I ../../../../Lessons/Lesson07/Eco.CalculatorE/SourceFiles \
+-I ../../../../Lessons/Lesson02/Eco.CalculatorA/HeaderFiles \
+-I ../../../../Lessons/Lesson03/Eco.CalculatorB/HeaderFiles \
+-I ../../../../Lessons/Lesson06/Eco.CalculatorD/HeaderFiles \
+-I ../../../../Lessons/Lesson07/Eco.CalculatorE/HeaderFiles \
+-I ../../../../LabSharedFiles \
 -I ../../../UnitTestFiles/HeaderFiles \
 -I $(ECO_FRAMEWORK)/Eco.Core1/SharedFiles \
 -I $(ECO_FRAMEWORK)/Eco.InterfaceBus1/SharedFiles \
@@ -58,7 +72,7 @@ CC = gcc
 AR = gcc-ar
 
 ifeq ($(TARGET), 1)
-LIBS_TARGET=-l1F5DF16EE1BF43B999A434ED38FE8F3A
+LIBS_TARGET=-lA3C8F12B94D74E1A87C26F1B44D9E7C1
 else
 LIBS_TARGET=
 endif

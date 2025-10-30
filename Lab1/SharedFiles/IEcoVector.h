@@ -3,8 +3,7 @@
 
 #include "IEcoBase1.h"
 #include "EcoLabDefines.h"
-
-/* IEcoLab1 IID = {277FC00C-3562-4096-AFCF-C125B94EEC90} */
+/* IEcoVector IID = {2D0x7CF914-5689-4BE2-831A-BE05729C48F6} */
 #ifndef __IID_IEcoVector
 static const UGUID IID_IEcoVector = {0x01, 0x10, {0x2D, 0x7C, 0xF9, 0x14, 0x56, 0x89, 0x4B, 0xE2, 0x83, 0x1A, 0xBE, 0x05, 0x72, 0x9C, 0x48, 0xF6}};
 #endif /* __IID_IEcoVector */
